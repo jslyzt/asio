@@ -1,9 +1,8 @@
 @echo off
 
 rd /s /q .vs
-
-rd /s /q bin
-rd /s /q lib
+rd /s /q x64
+rd /s /q ..\bin
 
 for /D %%i in (*) do (
 	if exist %%~ni\x64 (
