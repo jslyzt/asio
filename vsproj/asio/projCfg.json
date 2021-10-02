@@ -2,6 +2,6 @@
 	"dir": ["../../include/", "../../src"],
 	"filter": {
 		"unfold": true,
-		"skip": 4
+		"skip": 2
 	}
 }

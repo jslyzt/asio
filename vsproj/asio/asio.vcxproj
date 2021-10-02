@@ -53,8 +53,9 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS;_WIN32_WINNT=0x0601</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -67,8 +68,9 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS;_WIN32_WINNT=0x0601</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -78,13 +80,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\src\chat_client.cpp" />
+    <ClCompile Include="..\..\src\tcp_client.cpp" />
     <ClCompile Include="..\..\src\main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
-<ItemGroup>
+  <ItemGroup>
     <ClInclude Include="..\..\include\asio.hpp" />
     <ClInclude Include="..\..\include\asio\any_io_executor.hpp" />
     <ClInclude Include="..\..\include\asio\associated_allocator.hpp" />
@@ -604,6 +606,8 @@
     <ClInclude Include="..\..\include\asio\write.hpp" />
     <ClInclude Include="..\..\include\asio\write_at.hpp" />
     <ClInclude Include="..\..\include\asio\yield.hpp" />
-    <ClInclude Include="..\..\src\chat_client.h" />
+    <ClInclude Include="..\..\src\tcp_client.h" />
+    <ClInclude Include="..\..\src\tcp_message.h" />
+    <DataFilesToCopyRemotely Include="@(ClInclude)" />
   </ItemGroup>
-  </Project>
+</Project>
